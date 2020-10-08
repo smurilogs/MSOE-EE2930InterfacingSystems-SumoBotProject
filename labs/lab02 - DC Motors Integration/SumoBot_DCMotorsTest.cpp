@@ -1,6 +1,6 @@
 
 /*
- * SumoBot.c
+ * SumoBot.cpp
  *
  *  Created on: Dec 20, 2014
  *      Author: gonzagasilvas (Sergio Murilo Gonzaga Silva)
@@ -149,43 +149,54 @@ void main(void)
 	sei();
 
 	// Delay
-	lcd_printf("L SENSORS TEST");
+	lcd_printf("MOTORS TEST");
 	delay_ms(1500);
 
 	// Main loop: Robot behavior logic
 	while(1)
 	{
-		lcd_clear();
-		lcd_home();
+		stop();
+		delay_ms(1000);
 
-		if(getLlineSensorMagnitude() < 400 && getRlineSensorMagnitude() < 400)
-		{
-			lcd_printf("BOTH");
-			while(getLlineSensorMagnitude() < 400 && getRlineSensorMagnitude() < 400);
-		}
-		else
-		{
-			if(getLlineSensorMagnitude() < 400)
-			{
-				lcd_printf("LEFT");
-				while(getLlineSensorMagnitude() < 400);
-			}
-			else
-			{
-				if(getRlineSensorMagnitude() < 400)
-				{
-					lcd_printf("RIGHT");
-					while(getRlineSensorMagnitude() < 400);
-				}
-				else
-				{
-					lcd_printf("NONE");
-					while(getLlineSensorMagnitude() >= 400 && getRlineSensorMagnitude() >= 400);
-				}
-			}
-		}
+		forwardRMotor();
+		runRMotor(511);
+		forwardLMotor();
+		runLMotor(511);
+		delay_ms(2000);
 
-		delay_ms(100);
+		stop();
+		delay_ms(1000);
+
+		backwardRMotor();
+		runRMotor(511);
+		backwardLMotor();
+		runLMotor(511);
+		delay_ms(2000);
+
+		forwardLMotor();
+		runLMotor(511);
+		delay_ms(2000);
+
+		stop();
+		delay_ms(1000);
+
+		backwardLMotor();
+		runLMotor(511);
+		delay_ms(2000);
+
+		stop();
+		delay_ms(1000);
+
+		forwardRMotor();
+		runRMotor(511);
+		delay_ms(2000);
+
+		stop();
+		delay_ms(1000);
+
+		backwardRMotor();
+		runRMotor(511);
+		delay_ms(2000);
 	}
 }
 

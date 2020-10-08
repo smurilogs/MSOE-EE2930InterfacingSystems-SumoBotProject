@@ -1,6 +1,6 @@
 
 /*
- * SumoBot.c
+ * SumoBot.cpp
  *
  *  Created on: Dec 20, 2014
  *      Author: gonzagasilvas (Sergio Murilo Gonzaga Silva)
@@ -148,55 +148,75 @@ void main(void)
 	initMagnitudeSystem();
 	sei();
 
-	// Delay
-	lcd_printf("MOTORS TEST");
-	delay_ms(1500);
+	// Delay of 5 seconds
+	delay_ms(1900);
 
 	// Main loop: Robot behavior logic
 	while(1)
 	{
-		stop();
-		delay_ms(1000);
+		//LlineSensorMagnitude = getLlineSensorMagnitude();
+		//RlineSensorMagnitude = getRlineSensorMagnitude();
 
-		forwardRMotor();
-		runRMotor(511);
-		forwardLMotor();
-		runLMotor(511);
-		delay_ms(2000);
+		if(getLlineSensorMagnitude() < 400 || getRlineSensorMagnitude() < 400)
+		{
+			if(getRlineSensorMagnitude() < 400)
+				lastTargetDetection = 1;
+			else
+				lastTargetDetection = 0;
 
-		stop();
-		delay_ms(1000);
+			stop();
+			delay_ms(50);
+			reverse();
+			while(getLlineSensorMagnitude() < 400 || getRlineSensorMagnitude() < 400);
 
-		backwardRMotor();
-		runRMotor(511);
-		backwardLMotor();
-		runLMotor(511);
-		delay_ms(2000);
+			delay_ms(600);
+			onLine = 1;
+		}
+		else
+			onLine = 0;
 
-		forwardLMotor();
-		runLMotor(511);
-		delay_ms(2000);
+		//LtargetSensorMagnitude = getLtargetSensorMagnitude();
+		//RtargetSensorMagnitude = getRtargetSensorMagnitude();
 
-		stop();
-		delay_ms(1000);
+		if(getLtargetSensorMagnitude() >= 3 && getRtargetSensorMagnitude() >= 3 && onLine == 0)
+		{
+			attack();
+		}
 
-		backwardLMotor();
-		runLMotor(511);
-		delay_ms(2000);
+		if(getLtargetSensorMagnitude() >= 3 && onLine == 0)
+		{
+			attackLeft();
+		}
 
-		stop();
-		delay_ms(1000);
+		if(getRtargetSensorMagnitude() >= 3 && onLine == 0)
+		{
+			attackRight();
+		}
 
-		forwardRMotor();
-		runRMotor(511);
-		delay_ms(2000);
 
-		stop();
-		delay_ms(1000);
-
-		backwardRMotor();
-		runRMotor(511);
-		delay_ms(2000);
+		else
+		{
+			if(getLtargetSensorMagnitude() >= 10)
+			{
+				searchLeft();
+				lastTargetDetection = 0;
+			}
+			else
+			{
+				if(getRtargetSensorMagnitude() >= 10)
+				{
+					searchRight();
+					lastTargetDetection = 1;
+				}
+				else
+				{
+					if(lastTargetDetection == 1)
+						searchRight();
+					else
+						searchLeft();
+				}
+			}
+		}
 	}
 }
 
@@ -261,6 +281,9 @@ void initLCD(void)
 	lcd_init();
 	lcd_clear();
 	lcd_home();
+	lcd_printf(" Hello World! ");
+	lcd_goto_xy(0, 1);
+	lcd_printf("               ");
 }
 
 // Returns a value gotten from ADC module
@@ -494,8 +517,8 @@ void reverse(void)
 {
 	backwardRMotor();
 	backwardLMotor();
-	runLMotor(511);
-	runRMotor(511);
+	runLMotor(455);
+	runRMotor(455);
 }
 
 // Attacks slightly veering to the left

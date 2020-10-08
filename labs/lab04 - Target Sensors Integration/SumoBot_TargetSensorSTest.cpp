@@ -1,6 +1,6 @@
 
 /*
- * SumoBot.c
+ * SumoBot.cpp
  *
  *  Created on: Dec 20, 2014
  *      Author: gonzagasilvas (Sergio Murilo Gonzaga Silva)
