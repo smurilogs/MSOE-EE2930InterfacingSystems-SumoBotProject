@@ -104,5 +104,5 @@ The series requirements and content is shown in detail by the section for each l
 ##### Flowchart:
 
 <p align="center">
-<img src="labs/lab05/flowchart.png" width="600">
+<img src="labs/lab05/flowchart.png" width="1000">
 </p>
