@@ -23,6 +23,10 @@ The series requirements and content is shown in detail by the section for each l
 
 ##### Built with:
 
+* Arduino UNO
+* 7.5 volts battery pack
+* 3-contact switch
+
 ##### Schematic:
 
 <p align="center">
@@ -40,6 +44,13 @@ The series requirements and content is shown in detail by the section for each l
 ##### Requirements:
 
 ##### Built with:
+
+* Arduino UNO
+* 7.5 volts battery pack
+* L293D IC
+* IC with 2 inverters 
+* 2x 3-contact switches
+* 2x DC motors
 
 ##### Schematic:
 
@@ -59,6 +70,10 @@ The series requirements and content is shown in detail by the section for each l
 
 ##### Built with:
 
+* Arduino UNO
+* 7.5 volts battery pack
+* 3-contact switch
+
 ##### Schematic:
 
 <p align="center">
@@ -77,6 +92,10 @@ The series requirements and content is shown in detail by the section for each l
 
 ##### Built with:
 
+* Arduino UNO
+* 7.5 volts battery pack
+* 3-contact switch
+
 ##### Schematic:
 
 <p align="center">
@@ -94,6 +113,13 @@ The series requirements and content is shown in detail by the section for each l
 ##### Requirements:
 
 ##### Built with:
+
+* Arduino UNO
+* 7.5 volts battery pack
+* L293D IC
+* IC with 2 inverters 
+* 2x 3-contact switches
+* 2x DC motors
 
 ##### Schematic:
 
