@@ -21,6 +21,8 @@ The series requirements and content is shown in detail by the section for each l
 
 ##### Requirements:
 
+This lab focuses on the initial wiring required for creating the sumobot intended for the course. The idea is to show basic connections between the battery pack used and the Arduino Uno so that it can be a platform for testing every feature designed as requirements in the next labs.
+
 ##### Built with:
 
 * Arduino UNO
@@ -42,6 +44,8 @@ The series requirements and content is shown in detail by the section for each l
 ## Lab 02: DC Motors Integration
 
 ##### Requirements:
+
+This lab intends to show how could be made the wiring needed to interface the motors that are going to spin the sumobot wheels. For that implementation, the IC L293D is used to set up an H-bridge necessary for the Arduino Uno to control activation magnitude and direction for each one of the wheels.
 
 ##### Built with:
 
