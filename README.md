@@ -97,11 +97,15 @@ This lab covers the integration (including components wiring and firmware testin
 
 ##### Requirements:
 
+This lab covers the integration (including components wiring and firmware testing) for the target sensors assembly. For the function of a sumobot, it's interesting to have a resource to identify objects in front of the robot, which can be the fight opponents. This series use a couple of IR LED and PNA4601M pairs. Those pairs are going to have the function of getting the intensity of the IR LED's a reflection using PNA4601M towards the sumobot front. It allows to having a signal that corresponds to a presence or absense of objects in front of those assempblies mounted in the front of the robot. This functionality is tested separately in this lab.
+
 ##### Built with:
 
 * Arduino UNO
 * 7.5 volts battery pack
 * 3-contact switch
+* 2x PNA4601M components
+* 2x IR LED's
 
 ##### Schematic:
 
