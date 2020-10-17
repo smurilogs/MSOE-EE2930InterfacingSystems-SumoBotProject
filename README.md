@@ -131,6 +131,9 @@ This lab covers the integration (including components wiring and firmware testin
 * IC with 2 inverters 
 * 2x 3-contact switches
 * 2x DC motors
+* 2x QTR-1A modules
+* 2x PNA4601M components
+* 2x IR LED's
 
 ##### Schematic:
 
