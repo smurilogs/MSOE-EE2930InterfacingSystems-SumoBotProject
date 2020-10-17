@@ -72,11 +72,14 @@ This lab intends to show how could be made the wiring needed to interface the mo
 
 ##### Requirements:
 
+This lab covers the integration (including components wiring and firmware testing) for the line sensors. For the function of a sumobot, it's interesting to have a resource to identify white lines on the floor, which can be the the limits of the fight ring. This series use a couple of QTR-1A modules to do that function by getting intensity of IR light reflection towards the floor by using AD conversion. This functionality is tested separately in this lab.
+
 ##### Built with:
 
 * Arduino UNO
 * 7.5 volts battery pack
 * 3-contact switch
+* 2x QTR-1A modules
 
 ##### Schematic:
 
