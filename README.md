@@ -123,6 +123,8 @@ This lab covers the integration (including components wiring and firmware testin
 
 ##### Requirements:
 
+This lab presents the full integration of all parts of the the sumobot created in this course. It refers to a general test of connections of and code of all components previously tested at the same time. It also presents the logics used by the robot to define a strategy to the fights using sensor resources provided (line and target sensors) to summarize information about the scenario and opponents in the environment as well as the control of directions and activations for the wheels, which is going to make possible to the robot to charge agains the opponents in the fighting ring.  
+
 ##### Built with:
 
 * Arduino UNO
